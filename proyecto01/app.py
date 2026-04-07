@@ -1,5 +1,7 @@
 from flask import Flask, render_template
 import requests
+# Importar el puerto desde el archivo puertoFlask.py
+from puertoFlask import puerto
 
 app = Flask(__name__)
 
@@ -19,4 +21,4 @@ def index():
     return render_template("index.html", usuarios=usuarios)
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(debug=True, port=puerto)
